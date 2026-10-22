@@ -45,7 +45,7 @@ void __interrupt() isr(void) {
     if (TMR1IF) {
         TMR1H = 0x0B; TMR1L = 0xDC; // Reload for 100ms
         
-        // State 2 (Active Countdown) ဖြစ်နေမှသာ အချိန်လျှော့ချမည်
+        / State 2 (Active Countdown) ဖြစ်နေမှသာ အချိန်လျှော့ချမည်
         if (timer_state == 2 && timer_minutes > 0) {
             seconds_counter++;
             if (seconds_counter >= 600) { // 60 seconds = 1 minute
